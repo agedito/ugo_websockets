@@ -1,4 +1,4 @@
-package routes
+package main
 
 import (
 	"github.com/agedito/ugo_websockets/html_client/handlers"
