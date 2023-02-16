@@ -3,9 +3,12 @@ Code from [Udemy course](https://www.udemy.com/course/working-with-websockets-in
 
 ## Packages
 * [Jet](https://github.com/CloudyKit/jet) - Html templates packages
-
 ```
 go get github.com/CloudyKit/jet/v6
+```
+* [Pat](https://github.com/bmizerany/pat) - Routing
+```
+go get github.com/bmizerany/pat
 ```
 
 ## Extensions

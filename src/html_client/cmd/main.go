@@ -1,12 +1,13 @@
 package main
 
 import (
-	"github.com/agedito/ugo_websockets/html_client/handlers"
+	"github.com/agedito/ugo_websockets/html_client/routes"
 	"log"
 	"net/http"
 )
 
 func main() {
-	http.Handle("/", http.HandlerFunc(handlers.Home))
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	mux := routes.Routes()
+	err := http.ListenAndServe(":8080", mux)
+	log.Fatal(err)
 }
