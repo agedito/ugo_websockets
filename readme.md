@@ -2,7 +2,7 @@
 Code from [Udemy course](https://www.udemy.com/course/working-with-websockets-in-go/)
 
 ## Environment
-### Packages
+### Go Packages
 * [GoDotEnv](https://github.com/joho/godotenv) - Env files
     ```
     go get github.com/joho/godotenv
@@ -19,6 +19,8 @@ Code from [Udemy course](https://www.udemy.com/course/working-with-websockets-in
     ```
     go get github.com/gorilla/websocket
     ```
+### Web Packages
+
 ### Extensions
 * [Emmet](http://emmet.io/) - easy html code writing
 
@@ -26,10 +28,12 @@ Code from [Udemy course](https://www.udemy.com/course/working-with-websockets-in
 ### Course
 * [Udemy curse](https://www.udemy.com/course/working-with-websockets-in-go/)
 * [My code](https://github.com/agedito/ugo_websockets)
-### Packages
+### Go Packages
 * [GoDotEnv](https://github.com/joho/godotenv) - Env files
 * [Jet](https://github.com/CloudyKit/jet) - Html templates packages
 * [Pat](https://github.com/bmizerany/pat) - Routing
 * [Gorilla WebSockets](https://github.com/gorilla/websocket) - Websockets
+### Web Packages
+* [Bootstrap](https://getbootstrap.com/)
 ### Extensions
 * [Emmet](http://emmet.io/) - html templates
