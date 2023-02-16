@@ -60,6 +60,9 @@
     document.addEventListener("DOMContentLoaded", function (){
         socket = new WebSocket(url)
         socket.onopen = () => {console.log("Successfully connected")}
+        socket.onclose = () =>{console.log("Connection closed")}
+        socket.onerror = () =>{console.log("There was an error")}
+        socket.onmessage = msg =>{console.log(msg)}
     })
 
 </script>
