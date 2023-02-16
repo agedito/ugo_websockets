@@ -10,4 +10,14 @@
 <body>
     <h1>This is the Home page</h1>
 </body>
+
+<script>
+    let socket = null;
+    const url = "ws://127.0.0.1:8080/ws";
+    document.addEventListener("DOMContentLoaded", function (){
+        socket = new WebSocket(url)
+        socket.onopen = () => {console.log("Successfully connected")}
+    })
+
+</script>
 </html>
