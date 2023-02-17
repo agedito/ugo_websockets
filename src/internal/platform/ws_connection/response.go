@@ -1,4 +1,4 @@
-package connection
+package ws_connection
 
 import "log"
 
@@ -8,12 +8,13 @@ type WsJsonResponse struct {
 	MessageType string `json:"message_type"`
 }
 
-func (ws *WsConnection) Response(message string) {
+func (connection *WsConnection) Response(message string) error {
 	var response WsJsonResponse
 	response.Message = message
-
-	err := ws.connection.WriteJSON(response)
+	err := connection.connection.WriteJSON(response)
 	if err != nil {
 		log.Println(err)
+		return err
 	}
+	return nil
 }
