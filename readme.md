@@ -35,5 +35,7 @@ Code from [Udemy course](https://www.udemy.com/course/working-with-websockets-in
 * [Gorilla WebSockets](https://github.com/gorilla/websocket) - Websockets
 ### Web Packages
 * [Bootstrap](https://getbootstrap.com/)
+* [Notier](https://jaredreich.com/notie/?utm_source=cdnjs&utm_medium=cdnjs_link&utm_campaign=cdnjs_library) alerts 
+* [CdnJs](https://cdnjs.com/) - Packages finder
 ### Extensions
 * [Emmet](http://emmet.io/) - html templates
