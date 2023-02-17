@@ -1,6 +1,8 @@
 package ws_connection
 
-import "log"
+import (
+	"log"
+)
 
 func (connection *WsConnection) Read(payload interface{}) error {
 	err := connection.connection.ReadJSON(&payload)

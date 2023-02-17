@@ -59,7 +59,7 @@
     const url = "ws://127.0.0.1:8080/ws";
     document.addEventListener("DOMContentLoaded", function (){
         socket = new WebSocket(url)
-        socket.onopen = () => {console.log("Successfully connected")}
+        socket.onopen = () => {console.log("Successfully co nnected")}
         socket.onclose = () =>{console.log("Connection closed")}
         socket.onerror = () =>{console.log("There was an error")}
         socket.onmessage = msg =>{
@@ -67,6 +67,15 @@
             let data = JSON.parse(msg.data);
             console.log(data);
         }
+
+        let userInput = document.getElementById("username");
+        userInput.addEventListener("change", function () {
+            let jsonData = {};
+            jsonData["action"] = "username"
+            jsonData["username"] = this.value;
+            console.log("Sending...", jsonData);
+           socket.send(JSON.stringify(jsonData));
+        });
     })
 
 </script>

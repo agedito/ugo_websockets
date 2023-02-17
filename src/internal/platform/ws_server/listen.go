@@ -15,10 +15,11 @@ func (server *WsServer) ListenForWs(connection ws_connection.WsConnection) {
 
 	var payload WsPayload
 	for {
-		err := connection.Read(payload)
+		err := connection.Read(&payload)
 		if err == nil {
 			payload.Conn = connection
 			server.wsChan <- payload
+			log.Println("Received", payload)
 		}
 	}
 }
@@ -27,7 +28,9 @@ func (server *WsServer) ListenToWsChannel() {
 	var response WsJsonResponse
 	for {
 		e := <-server.wsChan
+		log.Println("Action", e.Action)
 		response.Action = "Got here"
+		fmt.Println("E", e)
 		response.Message = fmt.Sprintf("Some Message, and action ws %s", e.Action)
 		server.broadcastToAll(response)
 	}
