@@ -14,7 +14,7 @@ func (server *WsServer) WsEndpoint(w http.ResponseWriter, r *http.Request) {
 	}
 
 	response := `<em><small>Connected to server</em></small>`
-	err = ws.Response(response)
+	err = server.Response(ws, response)
 	if err != nil {
 		log.Println(err)
 		return

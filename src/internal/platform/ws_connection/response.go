@@ -2,15 +2,7 @@ package ws_connection
 
 import "log"
 
-type WsJsonResponse struct {
-	Action      string `json:"action"`
-	Message     string `json:"message"`
-	MessageType string `json:"message_type"`
-}
-
-func (connection *WsConnection) Response(message string) error {
-	var response WsJsonResponse
-	response.Message = message
+func (connection *WsConnection) Response(response interface{}) error {
 	err := connection.connection.WriteJSON(response)
 	if err != nil {
 		log.Println(err)
