@@ -18,3 +18,7 @@ func New(w http.ResponseWriter, r *http.Request) (*WsConnection, error) {
 
 	return &connection, nil
 }
+
+func (connection *WsConnection) Close() error {
+	return connection.connection.Close()
+}

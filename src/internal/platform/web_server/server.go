@@ -1,6 +1,7 @@
 package web_server
 
 import (
+	"fmt"
 	"github.com/agedito/ugo_websockets/internal/platform/ports"
 	"net/http"
 )
@@ -17,6 +18,8 @@ func New(wsServer ports.WsServer, webClient ports.WebClient) *WebServer {
 
 func (server *WebServer) Run(port string) error {
 	mux := server.Routes()
+	fmt.Println("Starting channel listener")
+	go server.wsServer.ListenToWsChannel()
 	err := http.ListenAndServe(":"+port, mux)
 	return err
 }

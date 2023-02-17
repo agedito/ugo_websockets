@@ -13,10 +13,15 @@ func (server *WsServer) WsEndpoint(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	server.clients[*ws] = ""
+
 	response := `<em><small>Connected to server</em></small>`
 	err = server.Response(ws, response)
 	if err != nil {
 		log.Println(err)
 		return
 	}
+
+	go server.ListenForWs(*ws)
+
 }
